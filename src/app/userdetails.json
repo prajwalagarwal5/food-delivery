@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "name": "Chinese Food",
+        "emailId":"prajwalagarwal@gmail.com"
+    },
+    {
+        "id": 2,
+        "name": "Indian Food",
+        "emailId":"prajwalagarwal5@gmail.com"
+
+    }
+]

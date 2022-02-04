@@ -1,0 +1,25 @@
+<div class="container" fxLayout="row">
+    <div class="sidebar">
+        <img class="backgroung-image" src="assets/images/online-food-delivery-industry.jpg" alt="">
+    </div>
+    <div class="main" fxLayout="column" fxLayoutGap="10px">
+        <div class="head heading-1">
+            Signup as Restraunt Owner!
+        </div>
+        <div class="details" fxLayout="column" fxLayoutGap="10px" [formGroup]="signUpForm">
+            <div class="form-field-heading">Email Id</div>
+            <mat-form-field>
+                <input type="text" matInput placeholder="xyz@gmail.com" formControlName="emailId">
+            </mat-form-field>
+            <div class="form-field-heading">Password</div>
+            <mat-form-field>
+                <input type="password" matInput formControlName="password">
+            </mat-form-field>
+            <div class="form-field-heading">Restraunt Name</div>
+            <mat-form-field>
+                <input type="text" matInput placeholder="Enter restraunt name" formControlName="name">
+            </mat-form-field>
+            <button mat-flat-button (click)="signUp()">Submit</button>
+        </div>
+    </div>
+</div>

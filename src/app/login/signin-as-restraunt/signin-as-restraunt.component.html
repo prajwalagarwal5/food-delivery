@@ -1,0 +1,25 @@
+<div class="container" fxLayout="row">
+    <div class="sidebar">
+        <img class="backgroung-image" src="assets/images/online-food-delivery-industry.jpg" alt="">
+    </div>
+    <div class="main" fxLayout="column" fxLayoutGap="10px">
+        <div class="head heading-1">
+            SignIn as Restraunt
+        </div>
+        <div class="details" fxLayout="column" fxLayoutGap="10px" [formGroup]="logInForm">
+            <div class="email" fxLayout="row" fxLayoutGap="5px">
+                <div class="form-field-heading">Email Id</div>
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput placeholder="xyz@gmail.com" formControlName="emailId">
+                </mat-form-field>
+            </div>
+            <div class="pass" fxLayout="row" fxLayoutGap="5px">
+                <div class="form-field-heading">Password</div>
+                <mat-form-field appearance="outline">
+                    <input type="password" matInput formControlName="password">
+                </mat-form-field>
+            </div>
+            <button mat-flat-button (click)="login()">Login</button>
+        </div>
+    </div>
+</div>

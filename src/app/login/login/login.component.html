@@ -1,0 +1,46 @@
+<div class="container" fxLayout="row">
+    <div class="sidebar">
+        <img class="backgroung-image" src="assets/images/online-food-delivery-industry.jpg" alt="">
+    </div>
+    <div class="main" fxLayout="column" fxLayoutGap="10px">
+        <div class="head heading-1" >
+            Welcome to Food Delivery Service!
+        </div>
+        <div class="form-field-heading">For Restaurants: &nbsp;</div>
+        <div class="rest-signup" fxLayout="row" fxLayoutGap="10px" >
+            <button mat-stroked-button (click)="signUpRestraunt()" >
+                <div class="details">
+                    <div class="description-1">
+                        Signup as restaurants
+                    </div>
+                </div>
+            </button>
+            <div style="border-left: 1px solid lightgray;"></div>
+            <button mat-stroked-button (click)="signInRestraunt()" >
+                <div class="details">
+                    <div class="description-1">
+                        SignIn as restaurants
+                    </div>
+                </div>
+            </button>
+        </div>
+        <div class="form-field-heading">For Customers: &nbsp;</div>
+        <div class="rest-signup" fxLayout="row" fxLayoutGap="10px" >
+            <button mat-stroked-button (click)="signUpCustomer()">
+                <div class="details">
+                    <div class="description-1">
+                        Signup as Customer
+                    </div>
+                </div>
+            </button>
+            <div style="border-left: 1px solid lightgray;"></div>
+            <button mat-stroked-button (click)="signInCustomer()">
+                <div class="details">
+                    <div class="description-1">
+                        SignIn as customer
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+.sidebar {
+  display: flex;
+  flex: 40%;
+  overflow: hidden;
+  .backgroung-image {
+    object-fit: fill;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  background-color: #1f4e79;
+}
+.details {
+  display: flex;
+}
+.main {
+  flex: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+button:active {
+  box-shadow: 0 0 0 white;
+}
+button:hover {
+  background-color: #1f4e79;
+  color: white;
+}
+.mat-stroked-button {
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 560px;
+  border: 1px solid lightgray;
+}
+.description-1 {
+  line-height: 22px;
+  display: flex;
+  flex: 85%;
+  padding: 10px;
+  white-space: pre-wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}

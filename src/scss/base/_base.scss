@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  .heading-1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1f4e79;
+  }
+  .heading-2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f4e79;
+  }
+  .heading-2-black {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .heading-3 {
+    font-size: 19px;
+    font-weight: bold;
+    color: #1f4e79;
+  }
+  .form-field-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1f4e79;
+  }
+  .form-field-heading-black {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .form-field-sub-heading {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1f4e79;
+  }
+  .form-field-sub-heading-black {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .subtext-1 {
+    font-size: 12px;
+  }
+  .btn-style {
+    color: white;
+    background-color: #1f4e79;
+  }
+  .description {
+    color: #7f7f7f;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .description-blue {
+    color: #1f4e79;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .description-black {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: normal;
+    font-size: 13px;
+  }
+  .description-small-grey {
+    color: #7f7f7f;
+    font-size: 11px;
+    font-weight: normal;
+  }
+  .description-small-black {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 11px;
+    font-weight: normal;
+  }
+  .crt-btn {
+    line-height: 30px;
+  }
+  .btn-lb {
+    color: #1f4e79;
+    background-color: #e1e8f2;
+  }
+  .btn-style {
+    color: white;
+    background-color: #1f4e79;
+  }
+  .green-color-button{
+    background-color:#1acaad;
+    color: white;
+  }
+  .hover-effect {
+    transition: 0.3s;
+    &:hover {
+      background-color: #e6eff5;
+      border-radius: 6px;
+    }
+  }
+  .color-effect {
+    transition: 0.3s;
+    &:hover {
+      color: #1f4e79 !important;
+    }
+  }
+  .transition-effect {
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(2px);
+    }
+  }
+  a {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: #0563c1;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    mat-form-field.mat-form-field {
+      font-size: 16px;
+    }
+  }
+  mat-form-field.mat-form-field {
+    font-size: 15px;
+  }
+}
+
+
+
