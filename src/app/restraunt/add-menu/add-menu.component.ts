@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { SharedDialogComponent } from 'src/app/shared/shared-dialog/shared-dialog.component';
 
 @Component({
   selector: 'app-add-menu',
@@ -11,7 +13,7 @@ export class AddMenuComponent implements OnInit {
   menus:any = [];
   public newItem: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private dialog:MatDialog) { }
 
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInAdmin'));
@@ -34,7 +36,12 @@ export class AddMenuComponent implements OnInit {
     arr=JSON.parse(localStorage.getItem('restrauntDetails'));
     arr[this.registeredUser.id-1].itemList=this.menus;
     localStorage.setItem('restrauntDetails',JSON.stringify(arr));
-
+    this.newItem.reset();
+    this.dialog.open(SharedDialogComponent,{
+      data:{
+        text:"Item Added to menu List"
+      }
+    })
   }
 
 }

@@ -5,8 +5,23 @@
             <div class="description" style="width: fit-content;">Enter below details to add new Item in menu</div>
         </div>
     </div>
-    <div class="content" fxLayout="column" fxLayoutGap="5px">
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" >
+    <div class="content" fxLayout="column" fxLayoutGap="5px" style="margin-top: 5px;">
+        <form [formGroup]="newItem" (ngSubmit)="saveItem()" >
+            <div fxLayout="column" style="width: 50%;margin: auto;" >
+                <div class="form-field-heading">Food Name</div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" formControlName="itemName">
+                </mat-form-field>
+                <div class="form-field-heading">Quantity</div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" formControlName="qty">
+                </mat-form-field>
+                <div class="form-field-heading">Price</div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" formControlName="rate">
+                </mat-form-field>
+                <button mat-flat-button type="submit" class="btn-style" [disabled]="!newItem.valid">Add Item</button>
+            </div>
         
         </form>
     </div>
