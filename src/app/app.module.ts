@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AppRoutingModule } from './app-routing.module';
+import { RouteGuard } from './shared/route-guard/route-guard';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppMaterialModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [RouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

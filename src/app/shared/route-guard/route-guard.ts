@@ -11,14 +11,12 @@ export class RouteGuard implements CanActivate {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (localStorage.getItem('access_token')) {
+    if (localStorage.getItem('loggedInAdmin')) {
         return true;
     }
 
-    sessionStorage.setItem('requested-link',state.url);
     // navigate to login page
     this._router.navigate(['./login']);
-    // you can save redirect url so after authing we can move them back to the page they requested
     return false;
   }
 

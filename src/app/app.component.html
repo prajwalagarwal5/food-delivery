@@ -1,1 +1,30 @@
-<router-outlet></router-outlet>
+<div class="header" *ngIf="showHeaderForAdmin">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Food Delivery Application</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a [routerLink]="['./restraunt/home']" routerLinkActive="router-link-active" class="nav-item nav-link">Home</a>
+                    <a [routerLink]="['./restraunt/orders']" routerLinkActive="router-link-active" class="nav-item nav-link">Orders</a>
+                    <a [routerLink]="['./restraunt/menu']" routerLinkActive="router-link-active" class="nav-item nav-link">Menus</a>
+                    <a [routerLink]="['./restraunt/add-menu']" routerLinkActive="router-link-active" class="nav-item nav-link" >Add Menus</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <button mat-flat-button (click)="logOut()" class="nav-item nav-link">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
+<div *ngIf="!showHeaderForAdmin">
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+</div>
+<ng-template #template>
+    <router-outlet>
+    </router-outlet>
+</ng-template>
