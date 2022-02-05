@@ -122,7 +122,50 @@
         "name": "Mohan",
         "emailId": "admin2@gmail.com",
         "password": "prajwal",
-        "itemList": [],
+        "itemList": [
+            {
+                "id": 1,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            },
+            {
+                "id": 2,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            },
+            {
+                "id": 3,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            },
+            {
+                "id": 4,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            },
+            {
+                "id": 5,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            },
+            {
+                "id": 6,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            },
+            {
+                "id": 7,
+                "itemName": "Matar Paneer",
+                "qty": "1/2 plate",
+                "rate": 25
+            }
+        ],
         "orders": []
     }
 ]

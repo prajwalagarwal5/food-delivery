@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RouteGuardForUser } from './shared/route-guard-for-user/route-guard-for-user';
 import { RouteGuard } from './shared/route-guard/route-guard';
 
 const routes: Routes = [
@@ -12,6 +13,12 @@ const routes: Routes = [
     path: 'restraunt', loadChildren: () => import('./restraunt/restraunt.module').then(m => m.RestrauntModule),
     data: { showHeaderForAdmin: true, showHeaderForUser:false },
     canActivate: [RouteGuard]
+
+  },
+  {
+    path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule),
+    data: { showHeaderForAdmin: false, showHeaderForUser:true },
+    canActivate: [RouteGuardForUser]
 
   },
   

@@ -28,8 +28,6 @@ export class AppComponent implements OnInit {
 
   }
   logOut(){
-    localStorage.removeItem('restrauntDetails')
-    localStorage.removeItem('customertDetails')
     localStorage.removeItem('loggedInAdmin')
     localStorage.removeItem('loggedInUser')
     this.router.navigateByUrl('login')

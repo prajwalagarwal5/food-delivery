@@ -1,0 +1,51 @@
+<div class="container-1" *ngIf="div1">
+    <div class="head">
+        <div class="heading-2" fxLayout="column" style="align-items: center;">
+            Select your Favourite Restraunt
+            <div class="description" style="width: fit-content;">Get your yummy food from your prefered list of restraunts</div>
+        </div>
+    </div>
+    <div class="restraunt-lists" fxLayout="column" fxLayoutGap="10px">
+        <div class="restraunt" fxLayout="row" *ngFor="let restraunt of restrauntDetails;let i=index;">
+            <div class="name form-field-heading">{{restraunt.name}}</div>
+            <button mat-flat-button class="btn-style" (click)="orderNow(restraunt)">Order Now</button>
+        </div>
+    </div>
+</div>
+<div class="container-2" *ngIf="div2">
+    <div class="head">
+        <div class="heading-2" fxLayout="column" style="align-items: center;">
+            Select your Favourite Dish from 
+            <div class="description" style="width: fit-content;">Get your yummy food from your prefered list of restraunts</div>
+        </div>
+    </div>
+    <div class="back">
+        <button mat-icon-button (click)="enableDiv1()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+    <div class="menu-lists" fxLayout="column" fxLayoutGap="10px">
+        <div *ngFor="let menu of menus;let i=index;" fxLayout="row" style="align-items: center;">
+            <div class="styling" fxLayout="row" fxLayoutAlign="space-between" >
+                <div class="item-description" fxLayout="column" fxLayoutGap="5px">
+                    <div class="item-name form-field-heading">Dish: {{menu.itemName}}</div>
+                    <div class="qty description" >Qty: {{menu.qty}}</div>
+                </div>
+                <div class="rate form-field-heading" style="padding: 10px 20px;border-radius: 40px;">
+                   Rs. {{menu.rate}}
+                </div>
+            </div>
+            <button mat-icon-button (click)="reduce(i)" color="primary" >
+                <mat-icon style="color: blue;cursor: pointer;">remove_circle_outline</mat-icon>
+            </button>
+            <mat-form-field style="width: 10%;text-align: center;">
+                <mat-label>Quantity</mat-label>
+                <input type="text" min=1 matInput style="width: 80%;text-align: center;" [(ngModel)]="temp[i]">
+            </mat-form-field>
+            <button (click)="increase(i)" mat-icon-button color="primary" >
+                <mat-icon style="color: blue;cursor: pointer;">add_circle_outline</mat-icon>
+            </button>
+            <button mat-flat-button class="btn-style" (click)="addToCart(i)" [disabled]="temp[i]==0">Add To Cart</button>
+        </div>
+    </div>
+</div>

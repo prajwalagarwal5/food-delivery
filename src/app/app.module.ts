@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RouteGuard } from './shared/route-guard/route-guard';
+import { RouteGuardForUser } from './shared/route-guard-for-user/route-guard-for-user';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { RouteGuard } from './shared/route-guard/route-guard';
     AppMaterialModule,
     BrowserAnimationsModule,
   ],
-  providers: [RouteGuard],
+  providers: [RouteGuard,RouteGuardForUser],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
