@@ -1,0 +1,28 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+.head {
+  padding: 50px 0px;
+  text-align: center;
+  background-color: #dedfccc7;
+  width: 100%;
+}
+.item-list{
+    display: grid;
+    grid-template-columns:  2% 50% 24% 24%;
+}
+.content{
+    padding-top: 12px;
+    height: 71vh;
+    overflow: auto;
+}
+.items{
+    width: 60vw;
+}
+.order{
+    padding: 11px;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    background-color: floralwhite;
+}

@@ -23,6 +23,7 @@ export class AddMenuComponent implements OnInit {
 
   inititaliseForm() {
     this.newItem = this.fb.group({
+      id:new FormControl(''),
       itemName:new FormControl('',Validators.required),
       qty:new FormControl('',Validators.required),
       rate:new FormControl('',Validators.required)
@@ -30,6 +31,7 @@ export class AddMenuComponent implements OnInit {
   }
 
   saveItem(){
+    this.newItem.get('id').setValue(this.menus[this.menus.length-1].id+1);
     this.menus.push(this.newItem.value);
     localStorage.setItem('loggedInAdmin',JSON.stringify(this.registeredUser));
     let arr:any=[];

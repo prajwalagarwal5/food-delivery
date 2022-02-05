@@ -1,1 +1,37 @@
-<p>orders works!</p>
+<div class="container">
+    <div class="head">
+        <div class="heading-2" fxLayout="column" style="align-items: center;">
+            Orders
+            <div class="description" style="width: fit-content;">Orders made by customers</div>
+        </div>
+    </div>
+    <div class="content">
+        <div  fxLayout="column"fxLayoutGap="10px" style="align-items: center;">
+            <div class="order" *ngFor="let order of orders;let i=index;" fxLayout="column"  fxLayoutGap="10px">
+                <div class="ordeId form-field-heading">Order Id : {{order.orderId}}</div>
+                <div class="form-field-heading">Delivery Name: {{order.name}}</div>
+                <div class="items">
+                    <div class="form-field-heading">Items:-</div>
+                    <div class="item-list" *ngFor="let menu of order.menu;let y=index;" >
+                        <div class="form-field-heading">{{y+1}}. </div>
+                        <div class="item-detail" fxLayout="column">
+                            <div class="item-name form-field-sub-heading">  {{menu.itemName}}</div>
+                            <div class="item-qty description">({{menu.qty}})</div>
+                        </div>
+                        <div class="form-field-sub-heading">
+                            {{menu.servings}} X {{menu.rate}}
+                        </div>
+                        <div class="amount form-field-sub-heading">
+                            = {{menu.servings * menu.rate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="amount" fxLayout="row" fxLayoutGap="5px" style="justify-content: flex-end;">
+                    <div class="form-field-heading">Total amount = </div>
+                    <div class="form-field-heading">Rs. {{getAmount(i)}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

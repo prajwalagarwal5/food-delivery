@@ -43,7 +43,7 @@ export class SignupAsRestrauntComponent implements OnInit {
     }
     if (!this.check) {
       console.log(this.signUpForm.value)
-      this.signUpForm.get('id').setValue(this.registeredUser.length+1);
+      this.signUpForm.get('id').setValue(this.registeredUser[this.registeredUser.length-1].id+1);
       this.registeredUser.push(this.signUpForm.value);
       localStorage.setItem('restrauntDetails', JSON.stringify(this.registeredUser));
       this.signUpSuccess = true;
