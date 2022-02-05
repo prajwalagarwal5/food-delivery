@@ -6,20 +6,30 @@
         <div class="head heading-1">
             Signup as Restraunt Owner!
         </div>
-        <div class="details" fxLayout="column" fxLayoutGap="10px" [formGroup]="signUpForm">
-            <div class="form-field-heading">Email Id</div>
-            <mat-form-field>
-                <input type="text" matInput placeholder="xyz@gmail.com" formControlName="emailId">
-            </mat-form-field>
-            <div class="form-field-heading">Password</div>
-            <mat-form-field>
-                <input type="password" matInput formControlName="password">
-            </mat-form-field>
-            <div class="form-field-heading">Restraunt Name</div>
-            <mat-form-field>
-                <input type="text" matInput placeholder="Enter restraunt name" formControlName="name">
-            </mat-form-field>
-            <button mat-flat-button (click)="signUp()">Submit</button>
-        </div>
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" >
+            <div class="details" fxLayout="column" >
+                <div class="form-field-heading">Email Id</div>
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput placeholder="xyz@gmail.com" formControlName="emailId">
+                </mat-form-field>
+                <small class="error"
+                    *ngIf="signUpForm.controls.emailId.touched && signUpForm.controls.emailId.errors?.email">
+                    Email address not well formed.!
+                </small>
+                <div class="form-field-heading">Password</div>
+                <mat-form-field appearance="outline">
+                    <input type="password" matInput formControlName="password">
+                </mat-form-field>
+                <div class="form-field-heading">Restraunt Name</div>
+                <mat-form-field appearance="outline">
+                    <input type="text" matInput placeholder="Enter restraunt name" formControlName="name">
+                </mat-form-field>
+                <button mat-flat-button type="submit" class="btn-style" [disabled]="!signUpForm.valid">Submit</button>
+                <div class="form-field-heading" *ngIf="signUpSuccess" style="color: green;">
+                    SignUp Success
+                    <a [routerLink]="['../restraunt-signin']" >Go To Login Page</a>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

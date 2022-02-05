@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import *  as  data from '../../restraunt-details.json';
+import { MatDialog } from '@angular/material';
+import { SharedDialogComponent } from 'src/app/shared/shared-dialog/shared-dialog.component';
+
 @Component({
   selector: 'app-signup-as-restraunt',
   templateUrl: './signup-as-restraunt.component.html',
@@ -8,13 +10,14 @@ import *  as  data from '../../restraunt-details.json';
 })
 export class SignupAsRestrauntComponent implements OnInit {
   public signUpForm: FormGroup;
-  registeredUser = (data as any).default;
+  registeredUser = [];
   check: boolean = false;
+  signUpSuccess = false;
 
-
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private dialog: MatDialog) { }
 
   ngOnInit() {
+    this.registeredUser = JSON.parse(localStorage.getItem('restrauntDetails'));
     console.log(this.registeredUser);
     this.inititaliseForm();
   }
@@ -23,30 +26,35 @@ export class SignupAsRestrauntComponent implements OnInit {
     this.signUpForm = this.fb.group({
       id: new FormControl(''),
       emailId: new FormControl('', [Validators.required, Validators.email]),
-      password:new FormControl(''),
+      password: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
-      itemList:new FormArray([]),
-      orders:new FormArray([])
+      itemList: new FormArray([]),
+      orders: new FormArray([])
     })
   }
 
   signUp() {
+    this.signUpSuccess = false;
     for (var i = 0; i < this.registeredUser.length; i++) {
       if (this.registeredUser[i].emailId == this.signUpForm.get('emailId').value) {
         this.check = true;
         break;
       }
-      else
-        continue;
     }
     if (!this.check) {
-      // var path = require('path');
-      var data = JSON.stringify(this.registeredUser);
-      var fs = require('fs');
-      console.log(fs)
-      fs.writeFile('myjsonfile.json', JSON, 'utf8');
-
+      console.log(this.signUpForm.value)
+      this.registeredUser.push(this.signUpForm.value);
+      localStorage.setItem('restrauntDetails', JSON.stringify(this.registeredUser));
+      this.signUpSuccess = true;
     }
+    else {
+      this.dialog.open(SharedDialogComponent, {
+        data: {
+          text: "This Email is already registered with us!"
+        }
+      })
+    }
+    this.check = false;
   }
 
 }

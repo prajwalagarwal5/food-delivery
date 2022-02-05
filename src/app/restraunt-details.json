@@ -1,13 +1,18 @@
 [
     {
         "id": 1,
-        "name": "Chinese Food",
-        "emailId":"prajwalagarwal@gmail.com"
+        "name": "Ghnshyam",
+        "emailId": "prajwalagarwal@gmail.com",
+        "password": "prajwal",
+        "itemList": [],
+        "orders": []
     },
     {
         "id": 2,
-        "name": "Indian Food",
-        "emailId":"prajwalagarwal5@gmail.com"
-
+        "name": "Mohan",
+        "emailId": "prajwalagarwal5@gmail.com",
+        "password": "prajwal",
+        "itemList": [],
+        "orders": []
     }
 ]

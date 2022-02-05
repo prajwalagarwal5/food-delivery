@@ -6,20 +6,30 @@
         <div class="head heading-1">
             SignIn as Restraunt
         </div>
-        <div class="details" fxLayout="column" fxLayoutGap="10px" [formGroup]="logInForm">
-            <div class="email" fxLayout="row" fxLayoutGap="5px">
-                <div class="form-field-heading">Email Id</div>
-                <mat-form-field appearance="outline">
-                    <input type="text" matInput placeholder="xyz@gmail.com" formControlName="emailId">
-                </mat-form-field>
+        <form [formGroup]="logInForm" (ngSubmit)="logIn()">
+
+            <div class="details" fxLayout="column" fxLayoutGap="10px">
+                <div class="email" fxLayout="column" fxLayoutGap="5px">
+                    <div class="form-field-heading">Email Id</div>
+                    <mat-form-field appearance="outline">
+                        <input type="text" matInput placeholder="xyz@gmail.com" formControlName="emailId">
+                    </mat-form-field>
+                    <small class="error"
+                        *ngIf="logInForm.controls.emailId.touched && logInForm.controls.emailId.errors?.email">
+                        Email address not well formed.!
+                    </small>
+                </div>
+                <div class="pass" fxLayout="column" fxLayoutGap="5px">
+                    <div class="form-field-heading">Password</div>
+                    <mat-form-field appearance="outline">
+                        <input type="password" matInput formControlName="password">
+                    </mat-form-field>
+                </div>
+                <div *ngIf="invalidCredentials" class="error">
+                    Invalid email id or password!
+                </div>
+                <button mat-flat-button type="submit" class="btn-style" [disabled]="!logInForm.valid">Login</button>
             </div>
-            <div class="pass" fxLayout="row" fxLayoutGap="5px">
-                <div class="form-field-heading">Password</div>
-                <mat-form-field appearance="outline">
-                    <input type="password" matInput formControlName="password">
-                </mat-form-field>
-            </div>
-            <button mat-flat-button (click)="login()">Login</button>
-        </div>
+        </form>
     </div>
 </div>

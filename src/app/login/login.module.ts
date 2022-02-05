@@ -8,6 +8,7 @@ import { SignupAsRestrauntComponent } from './signup-as-restraunt/signup-as-rest
 import { SignupAsCustomerComponent } from './signup-as-customer/signup-as-customer.component';
 import { SigninAsCustomerComponent } from './signin-as-customer/signin-as-customer.component';
 import { SigninAsRestrauntComponent } from './signin-as-restraunt/signin-as-restraunt.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [LoginComponent, SignupAsRestrauntComponent, SignupAsCustomerComponent, SigninAsCustomerComponent, SigninAsRestrauntComponent],
@@ -16,7 +17,8 @@ import { SigninAsRestrauntComponent } from './signin-as-restraunt/signin-as-rest
     LoginRoutingModule,
     AppMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   entryComponents: []
 })

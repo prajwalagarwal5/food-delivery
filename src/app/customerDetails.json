@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "name": "prajwal",
+        "emailId":"prajwalagarwal@gmail.com",
+        "password":"123",
+        "orders":[],
+        "cart":[]
+    },
+    {
+        "id": 2,
+        "name": "Shyam",
+        "emailId":"prajwal@gmail.com",
+        "password":"123",
+        "orders":[],
+        "cart":[]
+
+    }
+]
