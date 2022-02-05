@@ -6,7 +6,7 @@ import { SharedDialogComponent } from "./shared-dialog/shared-dialog.component";
 
 @NgModule({
   declarations: [
-    SharedDialogComponent
+    SharedDialogComponent,
   ],
   imports: [
     CommonModule,

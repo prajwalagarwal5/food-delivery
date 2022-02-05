@@ -1,0 +1,25 @@
+<div class="container" fxLayout="column">
+    <div class="head">
+        <div class="heading-2" fxLayout="column" style="align-items: center;">
+            Menu Listing
+            <div class="description" style="width: fit-content;">Below Menu is visible to customer.</div>
+        </div>
+    </div>
+    <div class="menu-list" fxLayout="column" fxLayoutGap="10px" >
+        <div *ngFor="let menu of menus;let i=index;" fxLayout="row" fxLayoutGap="5px" style="justify-content: center;align-items: center;">
+            <div class="styling" fxLayout="row" fxLayoutAlign="space-between" >
+                <div class="item-description" fxLayout="column" fxLayoutGap="5px">
+                    <div class="item-name form-field-heading">{{menu.itemName}}</div>
+                    <div class="qty description" >{{menu.qty}}</div>
+                </div>
+                <div class="rate form-field-heading" style="padding: 10px 20px;border-radius: 40px;">
+                   Rs. {{menu.rate}}
+                </div>
+            </div>
+            <div class="delete">
+                <button mat-flat-button (click)="removeItem(i)">Remove Item from list</button>
+            </div>
+        </div>
+        
+    </div>
+</div>

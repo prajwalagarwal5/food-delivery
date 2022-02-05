@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "prajwal",
-        "emailId":"prajwalagarwal@gmail.com",
+        "emailId":"user1@gmail.com",
         "password":"123",
         "orders":[],
         "cart":[]
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "Shyam",
-        "emailId":"prajwal@gmail.com",
+        "emailId":"user2@gmail.com",
         "password":"123",
         "orders":[],
         "cart":[]

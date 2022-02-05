@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 import { SharedDialogComponent } from 'src/app/shared/shared-dialog/shared-dialog.component';
 @Component({
   selector: 'app-signin-as-restraunt',
@@ -14,7 +15,7 @@ export class SigninAsRestrauntComponent implements OnInit {
   check: boolean = false;
   registeredOrNot: boolean;
   invalidCredentials: boolean=false;
-  constructor(private fb: FormBuilder, private dialog: MatDialog) { }
+  constructor(private fb: FormBuilder, private dialog: MatDialog,private router:Router) { }
 
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('restrauntDetails'));
@@ -34,10 +35,8 @@ export class SigninAsRestrauntComponent implements OnInit {
       if (this.registeredUser[i].emailId == this.logInForm.get('emailId').value) {
         if(this.registeredUser[i].password==this.logInForm.get('password').value){
           console.log("success")
-                    
-          //Add redirect url
-
-
+          localStorage.setItem("loggedInAdmin",JSON.stringify(this.registeredUser[i]));
+          this.router.navigateByUrl("restraunt/home");
         }
         else{
           this.invalidCredentials=true;

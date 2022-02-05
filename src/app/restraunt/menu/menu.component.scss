@@ -1,0 +1,21 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+.head {
+  padding: 50px 0px;
+  text-align: center;
+  background-color: #dedfccc7;
+  width: 100%;
+}
+.menu-list {
+  margin-top: 10px;
+  height: 74vh;
+  overflow: auto;
+}
+.styling {
+  width: 40vw;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  padding: 11px;
+}
