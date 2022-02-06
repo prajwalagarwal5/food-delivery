@@ -29,6 +29,9 @@ export class AppComponent implements OnInit {
     else if(localStorage.getItem('loggedInAdmin')!=null && localStorage.getItem('loggedInAdmin')!=undefined){
       this.name=JSON.parse(localStorage.getItem('loggedInAdmin')).name;
     }
+    else{
+      this.name=""
+    }
 
 
     this.router.events.subscribe(event => {

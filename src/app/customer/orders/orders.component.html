@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="content " fxLayout="column" fxLayoutGap="10px" *ngIf="this.orders?.length>0">
+    <div class="content " fxLayout="column" fxLayoutGap="10px" *ngIf="orders?.length>0">
         <div class="order" *ngFor="let order of orders;let i= index;" fxLayout="column" fxLayoutGap="10px" >
             <div class="form-field-heading">Restraunt Name:-{{getRestrauntName(order[0].restrauntId)}}</div>
             <div class="form-field-heading">Items:-</div>

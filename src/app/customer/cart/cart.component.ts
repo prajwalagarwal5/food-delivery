@@ -64,8 +64,7 @@ export class CartComponent implements OnInit {
       "name": this.registeredUser.name,
       "menu": menu
     }
-    console.log(list)
-    arr2[this.registeredUser.id - 1].orders = this.items;
+    arr2[this.registeredUser.id - 1].orders.push(this.items);
     arr2[this.registeredUser.id - 1].cart = [];
     localStorage.setItem('customerDetails', JSON.stringify(arr2));
     arr1[this.registeredUser.cart[0].restrauntId - 1].orders.push(list)
