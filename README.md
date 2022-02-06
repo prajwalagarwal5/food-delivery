@@ -6,22 +6,48 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Steps to Launch Application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1) First clone the application using below command
+  git clone https://github.com/prajwalagarwal5/food-delivery.git 
 
-## Build
+2) Then use below command to install node_modules
+    npm i
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+3) After successfull installation of node_modules, we are ready to go live with development server by entering below command
+    npm run start
+    
+4) Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running unit tests
+## Method Explanation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This application is completely dynamic and responsive. Any restraunt users and customers can  create their account and use thier account.
+This application creates a bridge between restaurants and consumers. 
 
-## Running end-to-end tests
+Features-
+  Restraunt user can create menu list for their user's view and keep a track on orders received by customer.
+  Customers can view available restraunts and its menu and create thier orders.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+We are initialising the localStorage with two varible -
+   1) restrauntDetails- storing all information of the restraunts
+   2) customerDetails- storing all the information of the customer
+  We have created a dummy data for 2 restraunt and 2 customer, (anyone can signup and create a new one)-
+    Details of dummy data-
+      For Restraunt -
+        1)	Emailid - chefcorner@gmail.com
+            Password - chefcorner
+        
+        2)	Emailid - junction@gmail.com
+            Password - junction
+  
+      For Customer -
+        1)	EmailID - arun@gmail.com
+            Password - arun
+            
+        2)	EmailID - amit@gmail.com
+          	Password - amit
+    The above data is stored in the file above inside src->app with file name customerDetails.json & restraunt-details.json
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    
+  
+    
