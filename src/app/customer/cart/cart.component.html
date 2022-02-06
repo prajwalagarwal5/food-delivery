@@ -24,7 +24,7 @@
                         = Rs. {{item.servings * item.item.rate}}
                     </div>
                 </div>
-                <button mat-icon-button (click)="delete(i)">
+                <button mat-icon-button (click)="delete(i)" matTooltip="Remove from cart">
                     <mat-icon>delete_forever</mat-icon>
                 </button>
             </div>
@@ -34,7 +34,7 @@
             <div class="form-field-heading">Total amount = </div>
             <div class="form-field-heading">Rs. {{getAmount()}}</div>
         </div>
-        <button class="btn-style" mat-flat-button (click)="checkOut()"
+        <button class="btn-style" mat-flat-button (click)="checkOut()" matTooltip="Go to cart"
             style="margin-block-start: auto;">Checkout</button>
     </div>
     <div class="no-data" *ngIf="this.items?.length==0">

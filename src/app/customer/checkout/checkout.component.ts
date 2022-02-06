@@ -14,19 +14,21 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     this.seconds=5;
-    this.redirectInSecond();
   }
+
+  /**
+  * Redirects to orders page
+  */
   redirectInSecond() {
     var _this = this;
     setInterval(function () {
-      console.log(self)
-        console.log(_this.seconds)
         _this.seconds--;
       if (_this.seconds == 0) {
         _this.router.navigateByUrl('customer/orders')
       }
     }, 1000);
   }
+  
   close() {
     this.router.navigateByUrl('customer/orders');
   }

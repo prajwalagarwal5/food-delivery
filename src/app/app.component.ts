@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   showHeaderForAdmin: boolean = false;
   showHeaderForUser: boolean = false;
   title = 'food-delivery';
-
+  name="";
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -23,6 +23,13 @@ export class AppComponent implements OnInit {
     if(localStorage.getItem('customerDetails')==null || localStorage.getItem('customerDetails')==undefined){
       localStorage.setItem('customerDetails', JSON.stringify((customerData as any).default))
     }
+    if(localStorage.getItem('loggedInUser')!=null && localStorage.getItem('loggedInUser')!=undefined){
+      this.name=JSON.parse(localStorage.getItem('loggedInUser')).name;
+    }
+    else if(localStorage.getItem('loggedInAdmin')!=null && localStorage.getItem('loggedInAdmin')!=undefined){
+      this.name=JSON.parse(localStorage.getItem('loggedInAdmin')).name;
+    }
+
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {

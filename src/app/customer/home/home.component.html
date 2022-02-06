@@ -1,10 +1,10 @@
 <div class="container-1">
-    <div class="head">
-        <div class="heading-2" fxLayout="column" style="align-items: center;">
+    <div class="head" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+        <div class="heading-2" fxLayout="column" style="align-items: center;color: white;">
             Welcome to food delivery Application
-            <div class="description" style="width: fit-content;">You can Order food online and get it delivered instantly!</div>
+            <div class="description" style="width: fit-content;color: darkgray;">You can Order food online and get it delivered instantly!</div>
         </div>
-        <button mat-flat-button class="btn-style" [routerLink]="['../restraunt-list']" >Start Order</button>
+        <button mat-flat-button matTooltip="See available restraunts" class="btn-style" [routerLink]="['../restraunt-list']" >Start Order</button>
     </div>
     
     

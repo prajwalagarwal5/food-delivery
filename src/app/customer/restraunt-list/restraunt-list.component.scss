@@ -3,15 +3,20 @@
   width: 100vw;
 }
 .head {
-  padding: 50px 0px;
+  padding: 20px 0px;
   text-align: center;
   background-color: #dedfccc7;
   width: 100%;
+ 
 }
 .restraunt-lists{
-    width: 50%;
-    margin: auto;
     padding-top: 8px;
+    background-image: url(../../../assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10px;
+    height: 73vh;
+    align-items: center;
 }
 .menu-lists{
     width: fit-content;
@@ -25,6 +30,7 @@
     border: 1px solid lightgray;
     border-radius: 12px;
     background-color: floralwhite;
+    width: 50%;
 }
 .styling {
     width: 40vw;

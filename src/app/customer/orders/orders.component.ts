@@ -11,11 +11,18 @@ export class OrdersComponent implements OnInit {
 
   constructor() { }
 
+  /**
+  * Gets loggedInUser data during initialization of component
+  */
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInUser'));
     this.orders=this.registeredUser.orders;
     console.log(this.orders);
   }
+
+  /**
+  * return total amount of particular order
+  */
   getAmount(i){
     var totalAmount=0;
     for(var j=0;j<this.orders[i].length;j++){
@@ -24,6 +31,9 @@ export class OrdersComponent implements OnInit {
     return totalAmount;
   }
 
+  /**
+  * Return restraunt name of the order
+  */
   getRestrauntName(restrauntId){
     let name="";
       let arr1 = JSON.parse(localStorage.getItem('restrauntDetails')); 

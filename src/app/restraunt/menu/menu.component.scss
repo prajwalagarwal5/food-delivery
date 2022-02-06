@@ -3,21 +3,25 @@
   width: 100vw;
 }
 .head {
-  padding: 50px 0px;
+  padding: 20px 0px;
   text-align: center;
   background-color: #dedfccc7;
   width: 100%;
 }
 .menu-list {
-  margin-top: 10px;
+  padding-top: 10px;
   height: 74vh;
   overflow: auto;
+  background-image: url(../../../assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .styling {
   width: 40vw;
   border: 1px solid lightgray;
   border-radius: 12px;
   padding: 11px;
+  background-color: beige;
 }
 .no-data-title {
   width: 64vw;

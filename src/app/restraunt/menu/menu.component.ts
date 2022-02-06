@@ -11,12 +11,18 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
+  /**
+  * Gets loggedInAdmin data during initialization of component
+  */
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInAdmin'));
     this.menus=this.registeredUser.itemList;
     console.log(this.menus)
   }
 
+  /**
+  * Remove item from menu list
+  */
   removeItem(index){
     this.menus.splice(index,1);
     console.log(this.registeredUser)

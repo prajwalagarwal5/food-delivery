@@ -17,11 +17,17 @@ export class RestrauntListComponent implements OnInit {
 
   constructor(private snackBar: MatSnackBar) { }
 
+  /**
+  * Gets loggedInUser data during initialization of component
+  */
   ngOnInit() {
     this.enableDiv1();
     this.restrauntDetails = JSON.parse(localStorage.getItem('restrauntDetails'));
   }
 
+  /**
+  * Select restraunt and move to menu view
+  */
   orderNow(restraunt){
     this.selectedRestraunt=restraunt;
     this.menus=this.selectedRestraunt.itemList;
@@ -31,6 +37,9 @@ export class RestrauntListComponent implements OnInit {
     this.enableDiv2();
   }
 
+  /**
+  * View restraunt List wise
+  */
   enableDiv1(){
     this.selectedRestraunt=null;
     this.menus=[];
@@ -40,21 +49,33 @@ export class RestrauntListComponent implements OnInit {
     this.div2=false;
   }
 
+  /**
+  * menu items list wise
+  */
   enableDiv2(){
     this.div1=false;
     this.div2=true;
   }
 
+  /**
+  * reduce number of quantity
+  */
   reduce(index){
     if(this.temp[index]>0){
       this.temp[index]-=1;
     }
   }
 
+  /**
+  * increase number of quantity
+  */
   increase(index){
     this.temp[index]+=1;
   }
 
+  /**
+  * Add the selected item to cart and save it in localStorage of loggedInUser, restrauntDetails and customerDetails
+  */
   addToCart(index){
     this.cart=[]
     let arr:any={};
@@ -90,6 +111,9 @@ export class RestrauntListComponent implements OnInit {
     this.openSnackBar('Added To Cart')
   }
 
+  /**
+  * Open snack bar when item added to cart
+  */
   openSnackBar(message: string) {
     let config = new MatSnackBarConfig();
     config.panelClass = 'center';

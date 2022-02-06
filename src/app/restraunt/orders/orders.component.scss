@@ -3,7 +3,7 @@
   width: 100vw;
 }
 .head {
-  padding: 50px 0px;
+  padding: 20px 0px;
   text-align: center;
   background-color: #dedfccc7;
   width: 100%;
@@ -14,8 +14,11 @@
 }
 .content{
     padding-top: 12px;
-    height: 62vh;
+    height: 73vh;
     overflow: auto;
+    background-image: url(../../../assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .items{
     width: 60vw;

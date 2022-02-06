@@ -1,117 +1,87 @@
 [
     {
         "id": 1,
-        "name": "Ghnshyam",
-        "emailId": "admin1@gmail.com",
-        "password": "prajwal",
+        "name": "Chef Corner",
+        "emailId": "chefcorner@gmail.com",
+        "password": "chefcorner",
         "itemList": [
             {
                 "id": 1,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Paneer Butter Masala",
+                "qty": "Half",
+                "rate": 279
             },
             {
                 "id": 2,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Paneer Butter Masala",
+                "qty": "Full",
+                "rate": 319
             },
             {
                 "id": 3,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Veg Fried Rice",
+                "qty": "Half",
+                "rate": 239
             },
             {
                 "id": 4,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Veg Fried Rice",
+                "qty": "Full",
+                "rate": 299
             },
             {
                 "id": 5,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Chilli Chana",
+                "qty": "Full",
+                "rate": 230
             },
             {
                 "id": 6,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Paneer 65",
+                "qty": "Full",
+                "rate": 265
             },
             {
                 "id": 7,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Chilli Baby Corn",
+                "qty": "Full",
+                "rate": 240
             }
         ],
         "orders": [
             {
                 "orderId": 100,
-                "name": "prajwal",
+                "name": "Arun",
                 "menu": [
                     {
-                        "itemName": "Matar Paneer",
-                        "qty": "1/2 plate",
-                        "rate": 25,
-                        "servings":2
-                    },
-                    {
-                        "itemName": "Matar ",
-                        "qty": "2 plate",
-                        "rate": 25,
-                        "servings":1
+                        "itemName": "Paneer Butter Masala",
+                        "qty": "Half",
+                        "rate": 279,
+                        "servings": 2
                     }
                 ]
             },
             {
                 "orderId": 101,
-                "name": "shyam",
+                "name": "Arun",
                 "menu": [
                     {
-                        "itemName": "Matar Paneer",
-                        "qty": "1/2 plate",
-                        "rate": 25,
-                        "servings":2
-                    }
-                ]
-            },
-            {
-                "orderId": 100,
-                "name": "prajwal",
-                "menu": [
-                    {
-                        "itemName": "Matar Paneer",
-                        "qty": "1/2 plate",
-                        "rate": 25,
-                        "servings":2
+                        "itemName": "Paneer Butter Masala",
+                        "qty": "Half",
+                        "rate": 279,
+                        "servings": 1
                     },
                     {
-                        "itemName": "Matar ",
-                        "qty": "2 plate",
-                        "rate": 25,
-                        "servings":1
-                    }
-                ]
-            },
-            {
-                "orderId": 100,
-                "name": "prajwal",
-                "menu": [
-                    {
-                        "itemName": "Matar Paneer",
-                        "qty": "1/2 plate",
-                        "rate": 25,
-                        "servings":2
+                        "itemName": "Paneer Butter Masala",
+                        "qty": "Full",
+                        "rate": 319,
+                        "servings": 1
                     },
                     {
-                        "itemName": "Matar ",
-                        "qty": "2 plate",
-                        "rate": 25,
-                        "servings":1
+                        "itemName": "Veg Fried Rice",
+                        "qty": "Half",
+                        "rate": 239,
+                        "servings": 1
                     }
                 ]
             }
@@ -119,51 +89,51 @@
     },
     {
         "id": 2,
-        "name": "Mohan",
-        "emailId": "admin2@gmail.com",
-        "password": "prajwal",
+        "name": "Junction",
+        "emailId": "junction@gmail.com",
+        "password": "junction",
         "itemList": [
             {
                 "id": 1,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Cold Drink",
+                "qty": "180ml",
+                "rate": 89
             },
             {
                 "id": 2,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Mango Lassi",
+                "qty": "200ml",
+                "rate": 109
             },
             {
                 "id": 3,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Mango Milkshake",
+                "qty": "200ml",
+                "rate": 89
             },
             {
                 "id": 4,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Pineapple Milk Shake",
+                "qty": "170ml",
+                "rate": 89
             },
             {
                 "id": 5,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Lime Water",
+                "qty": "150ml",
+                "rate": 89
             },
             {
                 "id": 6,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Sweet Lassi",
+                "qty": "100ml",
+                "rate": 99
             },
             {
                 "id": 7,
-                "itemName": "Matar Paneer",
-                "qty": "1/2 plate",
-                "rate": 25
+                "itemName": "Vanilla Milkshake",
+                "qty": "85ml",
+                "rate": 89
             }
         ],
         "orders": []

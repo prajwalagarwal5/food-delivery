@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">Food Delivery Application</a>
+            <a [routerLink]="['./restraunt/home']" class="navbar-brand">Food Delivery Application</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -13,8 +13,17 @@
                     <a [routerLink]="['./restraunt/menu']" routerLinkActive="router-link-active" class="nav-item nav-link">Menus</a>
                     <a [routerLink]="['./restraunt/add-menu']" routerLinkActive="router-link-active" class="nav-item nav-link" >Add Menus</a>
                 </div>
-                <div class="navbar-nav ms-auto">
-                    <button mat-flat-button (click)="logOut()" class="nav-item nav-link">Logout</button>
+                <div class="navbar-nav ms-auto"  style="align-items: center;">
+                    <a mat-button [matMenuTriggerFor]="menu">
+                        <i style="font-size: 2.5rem;" class="material-icons">account_circle</i> 
+                        <span class="link">   {{ (name?.length>13)? (name | slice:0:13|titlecase)+'...':(name|titlecase) }} </span>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </a>
+        
+                    <mat-menu #menu="matMenu" xPosition="before">
+                        <button class="content-center"  style="display: flex;align-items: center;" mat-menu-item (click)="logOut()"><i class="material-icons-outlined" style="color: grey;margin-right: 4px;">logout</i><span>Log Out</span></button>
+                    </mat-menu>
+                    <!-- <button mat-flat-button (click)="logOut()" class="nav-item nav-link">Logout</button> -->
                 </div>
             </div>
         </div>
@@ -25,19 +34,29 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">Food Delivery Application</a>
+            <a [routerLink]="['./customer/home']" class="navbar-brand">Food Delivery Application</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a [routerLink]="['./customer/home']" routerLinkActive="router-link-active" class="nav-item nav-link">Home</a>
-                    <a [routerLink]="['./customer/restraunt-list']" routerLinkActive="router-link-active" class="nav-item nav-link">Restraunts</a>
-                    <a [routerLink]="['./customer/orders']" routerLinkActive="router-link-active" class="nav-item nav-link">Orders</a>
-                    <a [routerLink]="['./customer/cart']" routerLinkActive="router-link-active" class="nav-item nav-link" >Cart</a>
+                    <a [routerLink]="['./customer/home']" matTooltip="Go to home" routerLinkActive="router-link-active" class="nav-item nav-link">Home</a>
+                    <a [routerLink]="['./customer/restraunt-list']" matTooltip="Restraunt List" routerLinkActive="router-link-active" class="nav-item nav-link">Restraunts</a>
+                    <a [routerLink]="['./customer/orders']" matTooltip="Order history" routerLinkActive="router-link-active" class="nav-item nav-link">Orders</a>
                 </div>
-                <div class="navbar-nav ms-auto">
-                    <button mat-flat-button (click)="logOut()" class="nav-item nav-link">Logout</button>
+                <div class="navbar-nav ms-auto" style="align-items: center;">
+                    <button matTooltip="Go to cart" mat-icon-button class="btn-style" [routerLink]="['./customer/cart']">
+                        <mat-icon>shopping_cart</mat-icon></button>
+                    <a mat-button [matMenuTriggerFor]="menu" matTooltip="Click to logout">
+                        <i style="font-size: 2.5rem;" class="material-icons">account_circle</i> 
+                        <span class="link">   {{ (name?.length>13)? (name | slice:0:13|titlecase)+'...':(name|titlecase) }} </span>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </a>
+        
+                    <mat-menu #menu="matMenu" xPosition="before">
+                        <button class="content-center" style="display: flex;align-items: center;" mat-menu-item (click)="logOut()"><i class="material-icons-outlined" style="color: grey;margin-right: 4px;">logout</i><span>Log Out</span></button>
+                    </mat-menu>
+                    <!-- <button mat-flat-button (click)="logOut()" class="nav-item nav-link">Logout</button> -->
                 </div>
             </div>
         </div>

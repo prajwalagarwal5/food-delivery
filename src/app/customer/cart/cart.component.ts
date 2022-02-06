@@ -11,19 +11,23 @@ export class CartComponent implements OnInit {
   items = [];
   restrauntName: any;
 
-  constructor(private router:Router) { }
-
+  constructor(private router: Router) { }
+  /**
+    * Gets loggedInUser data during initialization of component
+    */
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInUser'));
     console.log(this.registeredUser);
     this.items = this.registeredUser.cart;
-    if(this.items.length>0){
-      let arr1 = JSON.parse(localStorage.getItem('restrauntDetails')); 
-      this.restrauntName=arr1[this.items[0].restrauntId-1].name;
+    if (this.items.length > 0) {
+      let arr1 = JSON.parse(localStorage.getItem('restrauntDetails'));
+      this.restrauntName = arr1[this.items[0].restrauntId - 1].name;
     }
 
   }
-
+/**
+  * Return amounts of particular orders
+  */
   getAmount() {
     var totalAmount = 0;
     for (var j = 0; j < this.items.length; j++) {
@@ -32,6 +36,9 @@ export class CartComponent implements OnInit {
     return totalAmount;
   }
 
+  /**
+  * checkout item by setting orderId and update it in restraunt and cutomer details in localStorage
+  */
   checkOut() {
     let arr1 = JSON.parse(localStorage.getItem('restrauntDetails'));
     let arr2 = JSON.parse(localStorage.getItem('customerDetails'));
@@ -63,19 +70,22 @@ export class CartComponent implements OnInit {
     localStorage.setItem('customerDetails', JSON.stringify(arr2));
     arr1[this.registeredUser.cart[0].restrauntId - 1].orders.push(list)
     localStorage.setItem('restrauntDetails', JSON.stringify(arr1));
-    this.registeredUser.cart=[];
+    this.registeredUser.cart = [];
     this.registeredUser.orders.push(this.items);
     localStorage.setItem('loggedInUser', JSON.stringify(this.registeredUser));
-    this.items=[];
+    this.items = [];
     this.router.navigateByUrl('customer/order-success');
   }
 
+  /**
+  * Remove particular item from cart
+  */
   delete(index) {
-    this.items.splice(index,1);
-    this.registeredUser.cart=this.items;
+    this.items.splice(index, 1);
+    this.registeredUser.cart = this.items;
     localStorage.setItem('loggedInUser', JSON.stringify(this.registeredUser));
-    let customerDetails=JSON.parse(localStorage.getItem('customerDetails'));
-    customerDetails[this.registeredUser.id-1].cart=this.items;
-    localStorage.setItem('customerDetails',JSON.stringify(customerDetails));
+    let customerDetails = JSON.parse(localStorage.getItem('customerDetails'));
+    customerDetails[this.registeredUser.id - 1].cart = this.items;
+    localStorage.setItem('customerDetails', JSON.stringify(customerDetails));
   }
 }

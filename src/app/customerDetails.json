@@ -1,19 +1,63 @@
 [
     {
         "id": 1,
-        "name": "prajwal",
-        "emailId":"user1@gmail.com",
-        "password":"123",
-        "orders":[],
-        "cart":[]
+        "name": "Arun",
+        "emailId": "arun@gmail.com",
+        "password": "arun",
+        "orders": [
+            [
+                {
+                    "servings": 2,
+                    "item": {
+                        "id": 1,
+                        "itemName": "Paneer Butter Masala",
+                        "qty": "Half",
+                        "rate": 279
+                    },
+                    "restrauntId": 1
+                }
+            ],
+            [
+                {
+                    "servings": 1,
+                    "item": {
+                        "id": 1,
+                        "itemName": "Paneer Butter Masala",
+                        "qty": "Half",
+                        "rate": 279
+                    },
+                    "restrauntId": 1
+                },
+                {
+                    "servings": 1,
+                    "item": {
+                        "id": 2,
+                        "itemName": "Paneer Butter Masala",
+                        "qty": "Full",
+                        "rate": 319
+                    },
+                    "restrauntId": 1
+                },
+                {
+                    "servings": 1,
+                    "item": {
+                        "id": 3,
+                        "itemName": "Veg Fried Rice",
+                        "qty": "Half",
+                        "rate": 239
+                    },
+                    "restrauntId": 1
+                }
+            ]
+        ],
+        "cart": []
     },
     {
         "id": 2,
-        "name": "Shyam",
-        "emailId":"user2@gmail.com",
-        "password":"123",
-        "orders":[],
-        "cart":[]
-
+        "name": "Amit",
+        "emailId": "amit@gmail.com",
+        "password": "amit",
+        "orders": [],
+        "cart": []
     }
 ]

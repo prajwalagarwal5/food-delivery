@@ -15,6 +15,9 @@ export class AddMenuComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private dialog:MatDialog) { }
 
+  /**
+  * Gets loggedInAdmin data during initialization of component
+  */
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInAdmin'));
     console.log(this.registeredUser)
@@ -22,6 +25,9 @@ export class AddMenuComponent implements OnInit {
     this.inititaliseForm();
   }
 
+  /**
+  * Initialize form
+  */
   inititaliseForm() {
     this.newItem = this.fb.group({
       id:new FormControl(''),
@@ -31,6 +37,9 @@ export class AddMenuComponent implements OnInit {
     })
   }
 
+  /**
+  * Add item in menu list and save it in localStorage
+  */
   saveItem(){
     if(this.menus.length==0){
       this.newItem.get('id').setValue(1);
