@@ -6,36 +6,39 @@
         </div>
         <!-- <button mat-flat-button class="btn-style" [routerLink]="['../restraunt-list']" >Start Order</button> -->
     </div>
-    <div class="content order" fxLayout="column" fxLayoutGap="10px" style="height: 60vh;" *ngIf="this.items?.length>0">
-        <div style="overflow: auto;height: 54vh;">
-            <div class="form-field-heading">Restraunt Name:-{{restrauntName}}</div>
-            <div class="form-field-heading">Items:-</div>
-            <div *ngFor="let item of items;let i=index;" fxLayout="row">
-                <div class="items item-list">
-                    <div class="form-field-heading">{{i+1}}. </div>
-                    <div class="item-detail" fxLayout="column">
-                        <div class="item-name form-field-sub-heading"> {{item.item.itemName}}</div>
-                        <div class="item-qty description">({{item.item.qty}})</div>
+    <div class="content " fxLayout="column" fxLayoutGap="10px" *ngIf="this.items?.length>0">
+        <div fxLayout="column" class="order">
+            <div style="overflow: auto;height: 54vh;" fxLayout="column" fxLayoutGap="7px">
+                <div class="form-field-heading">Restraunt Name:-{{restrauntName}}</div>
+                <div class="form-field-heading">Items:-</div>
+                <div *ngFor="let item of items;let i=index;" fxLayout="row">
+                    <div class="items item-list">
+                        <div class="form-field-heading">{{i+1}}. </div>
+                        <div class="item-detail" fxLayout="column">
+                            <div class="item-name form-field-sub-heading"> {{item.item.itemName}}</div>
+                            <div class="item-qty description">({{item.item.qty}})</div>
+                        </div>
+                        <div class="form-field-sub-heading">
+                            {{item.servings}} X Rs. {{item.item.rate}}
+                        </div>
+                        <div class="amount form-field-sub-heading">
+                            = Rs. {{item.servings * item.item.rate}}
+                        </div>
                     </div>
-                    <div class="form-field-sub-heading">
-                        {{item.servings}} X Rs. {{item.item.rate}}
-                    </div>
-                    <div class="amount form-field-sub-heading">
-                        = Rs. {{item.servings * item.item.rate}}
-                    </div>
+                    <button mat-icon-button (click)="delete(i)" matTooltip="Remove from cart">
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>
                 </div>
-                <button mat-icon-button (click)="delete(i)" matTooltip="Remove from cart">
-                    <mat-icon>delete_forever</mat-icon>
-                </button>
             </div>
+
+            <div class="amount" fxLayout="row" fxLayoutGap="5px" style="justify-content: flex-end;margin-top: 7px;">
+                <div class="form-field-heading">Total amount = </div>
+                <div class="form-field-heading">Rs. {{getAmount()}}</div>
+            </div>
+            <button class="btn-style" mat-flat-button (click)="checkOut()" matTooltip="Go to cart"
+                style="margin-block-start: auto;">Place Order</button>
         </div>
 
-        <div class="amount" fxLayout="row" fxLayoutGap="5px" style="justify-content: flex-end;">
-            <div class="form-field-heading">Total amount = </div>
-            <div class="form-field-heading">Rs. {{getAmount()}}</div>
-        </div>
-        <button class="btn-style" mat-flat-button (click)="checkOut()" matTooltip="Go to cart"
-            style="margin-block-start: auto;">Checkout</button>
     </div>
     <div class="no-data" *ngIf="this.items?.length==0">
         <div class="cntr" style="margin: 2rem 1rem 1rem 1rem;text-align: center;">

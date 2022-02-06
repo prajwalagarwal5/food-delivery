@@ -3,11 +3,10 @@
   width: 100vw;
 }
 .head {
-  padding: 50px 0px;
+  padding: 20px 0px;
   text-align: center;
   background-color: #dedfccc7;
   width: 100%;
-  margin-bottom: 5px;
 }
 .item-list {
   display: grid;
@@ -15,10 +14,11 @@
 }
 .content {
   padding-top: 12px;
-  height: 62vh;
-  overflow: auto;
-  width: fit-content;
-  margin: auto;
+  height: 73vh;
+  background-image: url(../../../assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
 }
 .items {
   width: 60vw;
