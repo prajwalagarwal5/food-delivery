@@ -1,1 +1,50 @@
-<p>cart works!</p>
+<div class="container-1">
+    <div class="head">
+        <div class="heading-2" fxLayout="column" style="align-items: center;">
+            Cart
+            <div class="description" style="width: fit-content;">Place Your order by clicking on checkout</div>
+        </div>
+        <!-- <button mat-flat-button class="btn-style" [routerLink]="['../restraunt-list']" >Start Order</button> -->
+    </div>
+    <div class="content order" fxLayout="column" fxLayoutGap="10px" style="height: 60vh;" *ngIf="this.items?.length>0">
+        <div style="overflow: auto;height: 54vh;">
+            <div class="form-field-heading">Restraunt Name:-{{restrauntName}}</div>
+            <div class="form-field-heading">Items:-</div>
+            <div *ngFor="let item of items;let i=index;" fxLayout="row">
+                <div class="items item-list">
+                    <div class="form-field-heading">{{i+1}}. </div>
+                    <div class="item-detail" fxLayout="column">
+                        <div class="item-name form-field-sub-heading"> {{item.item.itemName}}</div>
+                        <div class="item-qty description">({{item.item.qty}})</div>
+                    </div>
+                    <div class="form-field-sub-heading">
+                        {{item.servings}} X Rs. {{item.item.rate}}
+                    </div>
+                    <div class="amount form-field-sub-heading">
+                        = Rs. {{item.servings * item.item.rate}}
+                    </div>
+                </div>
+                <button mat-icon-button (click)="delete(i)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="amount" fxLayout="row" fxLayoutGap="5px" style="justify-content: flex-end;">
+            <div class="form-field-heading">Total amount = </div>
+            <div class="form-field-heading">Rs. {{getAmount()}}</div>
+        </div>
+        <button class="btn-style" mat-flat-button (click)="checkOut()"
+            style="margin-block-start: auto;">Checkout</button>
+    </div>
+    <div class="no-data" *ngIf="this.items?.length==0">
+        <div class="cntr" style="margin: 2rem 1rem 1rem 1rem;text-align: center;">
+            <img src="assets/images/data-not-found.svg" class="img-fluid" alt="no-cart-items">
+            <div class="img-caption">
+                <div class="heading-2 width-fix">Your cart is empty</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

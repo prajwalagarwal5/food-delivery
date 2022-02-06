@@ -17,8 +17,13 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    localStorage.setItem('restrauntDetails', JSON.stringify((data as any).default))
-    localStorage.setItem('customerDetails', JSON.stringify((customerData as any).default))
+    if(localStorage.getItem('restrauntDetails')==null || localStorage.getItem('restrauntDetails')==undefined){
+      localStorage.setItem('restrauntDetails', JSON.stringify((data as any).default))
+    }
+    if(localStorage.getItem('customerDetails')==null || localStorage.getItem('customerDetails')==undefined){
+      localStorage.setItem('customerDetails', JSON.stringify((customerData as any).default))
+    }
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.showHeaderForAdmin = this.activatedRoute.firstChild.snapshot.data.showHeaderForAdmin !== false;

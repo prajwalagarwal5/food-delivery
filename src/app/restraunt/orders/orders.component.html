@@ -5,7 +5,15 @@
             <div class="description" style="width: fit-content;">Orders made by customers</div>
         </div>
     </div>
-    <div class="content">
+    <div class="no-data" *ngIf="this.orders?.length==0">
+        <div class="cntr" style="margin: 2rem 1rem 1rem 1rem;text-align: center;">
+            <img src="assets/images/data-not-found.svg" class="img-fluid" alt="no-orders-items">
+            <div class="img-caption">
+                <div class="heading-2 width-fix">No Orders Found Added.</div>
+            </div>
+        </div>
+    </div>
+    <div class="content" *ngIf="this.orders?.length>0">
         <div  fxLayout="column"fxLayoutGap="10px" style="align-items: center;">
             <div class="order" *ngFor="let order of orders;let i=index;" fxLayout="column"  fxLayoutGap="10px">
                 <div class="ordeId form-field-heading">Order Id : {{order.orderId}}</div>

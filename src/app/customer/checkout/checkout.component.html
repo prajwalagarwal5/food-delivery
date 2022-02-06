@@ -1,1 +1,10 @@
-<p>checkout works!</p>
+<div class="container-1" fxLayout="column" fxLayoutGap="30px">
+    <img src="assets/images/Success.svg" alt="" class="img-fluid">
+    <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="flex-start center">
+        <div class="text-1">Order Successfull</div>
+        <div class="description-1" style="text-align: center;">You have successfully placed the order. <br> 
+        You will be redirected in {{seconds}} seconds automatically .
+        </div>
+        <button mat-button class="btn-close" (click)="close()" style="width: fit-content;height: fit-content;">Go To Orders Section</button>
+    </div>
+</div>

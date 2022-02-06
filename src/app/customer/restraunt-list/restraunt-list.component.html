@@ -5,10 +5,18 @@
             <div class="description" style="width: fit-content;">Get your yummy food from your prefered list of restraunts</div>
         </div>
     </div>
-    <div class="restraunt-lists" fxLayout="column" fxLayoutGap="10px">
+    <div class="restraunt-lists" fxLayout="column" fxLayoutGap="10px" *ngIf="this.restrauntDetails?.length>0">
         <div class="restraunt" fxLayout="row" *ngFor="let restraunt of restrauntDetails;let i=index;">
             <div class="name form-field-heading">{{restraunt.name}}</div>
             <button mat-flat-button class="btn-style" (click)="orderNow(restraunt)">Order Now</button>
+        </div>
+    </div>
+    <div class="no-data" *ngIf="this.restrauntDetails?.length==0">
+        <div class="cntr" style="margin: 2rem 1rem 1rem 1rem;text-align: center;">
+            <img src="assets/images/data-not-found.svg" class="img-fluid" alt="no-restraunt">
+            <div class="img-caption">
+                <div class="heading-2 width-fix">No Restraunt found</div>
+            </div>
         </div>
     </div>
 </div>
@@ -24,7 +32,15 @@
             <mat-icon>arrow_back</mat-icon>
         </button>
     </div>
-    <div class="menu-lists" fxLayout="column" fxLayoutGap="10px">
+    <div class="no-data" *ngIf="this.menus?.length==0">
+        <div class="cntr" style="margin: 2rem 1rem 1rem 1rem;text-align: center;">
+            <img src="assets/images/data-not-found.svg" class="img-fluid" alt="no-menu-items">
+            <div class="img-caption">
+                <div class="heading-2 width-fix">This Restraunt has no Food menu</div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-lists" fxLayout="column" fxLayoutGap="10px"  *ngIf="this.menus?.length>0">
         <div *ngFor="let menu of menus;let i=index;" fxLayout="row" style="align-items: center;">
             <div class="styling" fxLayout="row" fxLayoutAlign="space-between" >
                 <div class="item-description" fxLayout="column" fxLayoutGap="5px">

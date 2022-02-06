@@ -5,7 +5,15 @@
             <div class="description" style="width: fit-content;">Below Menu is visible to customer.</div>
         </div>
     </div>
-    <div class="menu-list" fxLayout="column" fxLayoutGap="10px" >
+    <div class="no-data" *ngIf="this.menus?.length==0">
+        <div class="cntr" style="margin: 2rem 1rem 1rem 1rem;text-align: center;">
+            <img src="assets/images/data-not-found.svg" class="img-fluid" alt="no-menu-items">
+            <div class="img-caption">
+                <div class="heading-2 width-fix">No menu Added. Click on Add menu on the top Bar</div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-list" fxLayout="column" fxLayoutGap="10px" *ngIf="this.menus?.length>0" >
         <div *ngFor="let menu of menus;let i=index;" fxLayout="row" fxLayoutGap="5px" style="justify-content: center;align-items: center;">
             <div class="styling" fxLayout="row" fxLayoutAlign="space-between" >
                 <div class="item-description" fxLayout="column" fxLayoutGap="5px">

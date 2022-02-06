@@ -1,0 +1,38 @@
+.container-1 {
+  height: 88vh;
+  width: 100vw;
+}
+.head {
+  padding: 50px 0px;
+  text-align: center;
+  background-color: #dedfccc7;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.item-list {
+  display: grid;
+  grid-template-columns: 2% 50% 24% 24%;
+}
+.content {
+  padding-top: 12px;
+  height: 62vh;
+  overflow: auto;
+  width: fit-content;
+  margin: auto;
+}
+.items {
+  width: 60vw;
+}
+.order {
+  padding: 11px;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  background-color: floralwhite;
+}
+.no-data-title {
+  width: 64vw;
+}
+.img-fluid {
+  max-width: 13rem;
+  height: auto;
+}
