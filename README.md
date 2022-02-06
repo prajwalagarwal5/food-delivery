@@ -46,7 +46,13 @@ We are initialising the localStorage with two varible -
             
         2)	EmailID - amit@gmail.com
           	Password - amit
-    The above data is stored in the file above inside src->app with file name customerDetails.json & restraunt-details.json
+            
+      
+  The above data is stored in the file above inside src->app with file name customerDetails.json & restraunt-details.json
+  
+  When restraunt or user login we maintain a localStorage data as loggedInAdmin and loggedInUser respectively to differentiate between and fetch which user is currently active
+            
+    
 
     
   
