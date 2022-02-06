@@ -57,7 +57,7 @@
                 <button mat-icon-button (click)="reduce(i)" color="primary" >
                     <mat-icon style="color: blue;cursor: pointer;">remove_circle_outline</mat-icon>
                 </button>
-                <mat-form-field style="width: 10%;text-align: center;">
+                <mat-form-field style="width: 10%;text-align: center;" appearance="outline">
                     <mat-label>Quantity</mat-label>
                     <input type="text" min=1 matInput style="width: 80%;text-align: center;" [(ngModel)]="temp[i]">
                 </mat-form-field>
