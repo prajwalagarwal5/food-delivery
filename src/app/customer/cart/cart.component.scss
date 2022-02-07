@@ -1,5 +1,5 @@
 .container-1 {
-  height: 88vh;
+  height: calc(100vh - 70px);
   width: 100vw;
 }
 .head {
@@ -14,7 +14,7 @@
 }
 .content {
   padding-top: 12px;
-  height: 73vh;
+  height: calc(100vh - 166px);
   background-image: url(../../../assets/images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;

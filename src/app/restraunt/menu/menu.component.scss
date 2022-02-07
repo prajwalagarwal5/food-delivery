@@ -1,5 +1,5 @@
 .container-1 {
-  height: 88vh;
+  height: calc(100vh - 70px);
   width: 100vw;
 }
 .head {
@@ -10,7 +10,7 @@
 }
 .menu-list {
   padding-top: 10px;
-  height: 74vh;
+  height: calc(100vh - 166px);
   overflow: auto;
   background-image: url(../../../assets/images/background.jpg);
   background-repeat: no-repeat;

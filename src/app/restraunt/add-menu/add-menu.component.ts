@@ -20,7 +20,6 @@ export class AddMenuComponent implements OnInit {
   */
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInAdmin'));
-    console.log(this.registeredUser)
     this.menus=this.registeredUser.itemList;
     this.inititaliseForm();
   }
@@ -50,7 +49,6 @@ export class AddMenuComponent implements OnInit {
     localStorage.setItem('loggedInAdmin',JSON.stringify(this.registeredUser));
     let arr:any=[];
     arr=JSON.parse(localStorage.getItem('restrauntDetails'));
-    console.log(arr);
     arr[this.registeredUser.id-1].itemList=this.menus;
     localStorage.setItem('restrauntDetails',JSON.stringify(arr));
     this.newItem.reset();

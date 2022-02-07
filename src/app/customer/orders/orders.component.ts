@@ -17,7 +17,6 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInUser'));
     this.orders=this.registeredUser.orders;
-    console.log(this.orders);
   }
 
   /**

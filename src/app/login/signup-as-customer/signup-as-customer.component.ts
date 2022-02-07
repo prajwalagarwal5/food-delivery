@@ -41,7 +41,6 @@ export class SignupAsCustomerComponent implements OnInit {
       }
     }
     if (!this.check) {
-      console.log(this.signUpForm.value)
       this.signUpForm.get('id').setValue(this.registeredUser[this.registeredUser.length-1].id+1);
       this.registeredUser.push(this.signUpForm.value);
       localStorage.setItem('customerDetails', JSON.stringify(this.registeredUser));

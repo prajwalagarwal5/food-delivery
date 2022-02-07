@@ -1,5 +1,5 @@
 .container-1 {
-  height: 88vh;
+  height: calc(100vh - 70px);
   width: 100vw;
 }
 .head {
@@ -28,7 +28,7 @@
 }
 .content {
   padding-top: 12px;
-  height: 73vh;
+  height:  calc(100vh - 166px);
   overflow: auto;
   align-items: center;
   background-image: url(../../../assets/images/background.jpg);

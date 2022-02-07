@@ -83,16 +83,8 @@ export class RestrauntListComponent implements OnInit {
     arr.item=this.menus[index];
     arr.restrauntId=this.selectedRestraunt.id;
     let data=JSON.parse(localStorage.getItem('loggedInUser'));
-    console.log(data)
-    if(data.cart.length>0){
-      console.log(data.cart[0].restrauntId)
-      console.log(data.cart[0])
-    }
-    
-    console.log(arr.restrauntId)
 
     if(data && data.cart.length>0 && data.cart[0].restrauntId===arr.restrauntId){
-      console.log(1)
       this.cart.push(arr);
       for(var i=0;i<data.cart.length;i++)
         this.cart.push(data.cart[i]);
@@ -100,7 +92,6 @@ export class RestrauntListComponent implements OnInit {
       localStorage.setItem('loggedInUser',JSON.stringify(data));
     }
     else{
-      console.log(2)
       this.cart.push(arr);
       data.cart=this.cart;
       localStorage.setItem('loggedInUser',JSON.stringify(data));

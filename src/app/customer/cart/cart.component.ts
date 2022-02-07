@@ -17,7 +17,6 @@ export class CartComponent implements OnInit {
     */
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInUser'));
-    console.log(this.registeredUser);
     this.items = this.registeredUser.cart;
     if (this.items.length > 0) {
       let arr1 = JSON.parse(localStorage.getItem('restrauntDetails'));

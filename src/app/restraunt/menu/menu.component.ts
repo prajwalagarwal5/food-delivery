@@ -17,7 +17,6 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.registeredUser = JSON.parse(localStorage.getItem('loggedInAdmin'));
     this.menus=this.registeredUser.itemList;
-    console.log(this.menus)
   }
 
   /**
@@ -25,8 +24,6 @@ export class MenuComponent implements OnInit {
   */
   removeItem(index){
     this.menus.splice(index,1);
-    console.log(this.registeredUser)
-    console.log(this.menus)
     localStorage.setItem('loggedInAdmin',JSON.stringify(this.registeredUser));
     let arr:any=[];
     arr=JSON.parse(localStorage.getItem('restrauntDetails'));

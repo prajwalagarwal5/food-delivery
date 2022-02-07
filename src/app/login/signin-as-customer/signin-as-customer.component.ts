@@ -35,7 +35,6 @@ export class SigninAsCustomerComponent implements OnInit {
     for (var i = 0; i < this.registeredUser.length; i++) {
       if (this.registeredUser[i].emailId == this.logInForm.get('emailId').value) {
         if(this.registeredUser[i].password==this.logInForm.get('password').value){
-          console.log("success")
           localStorage.setItem("loggedInUser",JSON.stringify(this.registeredUser[i]));
           this.router.navigateByUrl("customer/home");
           //Add redirect url

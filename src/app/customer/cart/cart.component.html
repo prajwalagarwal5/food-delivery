@@ -8,7 +8,7 @@
     </div>
     <div class="content " fxLayout="column" fxLayoutGap="10px" *ngIf="this.items?.length>0">
         <div fxLayout="column" class="order">
-            <div style="overflow: auto;height: 54vh;" fxLayout="column" fxLayoutGap="7px">
+            <div style="overflow: auto;height: calc(100vh - 282px);" fxLayout="column" fxLayoutGap="7px">
                 <div class="form-field-heading">Restraunt Name:-{{restrauntName}}</div>
                 <div class="form-field-heading">Items:-</div>
                 <div *ngFor="let item of items;let i=index;" fxLayout="row">

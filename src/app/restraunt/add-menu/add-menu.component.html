@@ -10,15 +10,15 @@
             <div fxLayout="column" style="width: 50%;margin: auto;" >
                 <div class="form-field-heading">Food Name</div>
                 <mat-form-field appearance="outline">
-                    <input matInput type="text" formControlName="itemName">
+                    <input matInput type="text" formControlName="itemName" placeholder="Enter item name">
                 </mat-form-field>
                 <div class="form-field-heading">Quantity</div>
                 <mat-form-field appearance="outline">
-                    <input matInput type="text" formControlName="qty">
+                    <input matInput type="text" formControlName="qty" placeholder="Enter quantity of food received by customer">
                 </mat-form-field>
-                <div class="form-field-heading">Price</div>
+                <div class="form-field-heading">Price(Rs.)</div>
                 <mat-form-field appearance="outline">
-                    <input matInput type="text" formControlName="rate">
+                    <input matInput type="text" formControlName="rate" placeholder="Enter price">
                 </mat-form-field>
                 <button mat-flat-button type="submit" class="btn-style" [disabled]="!newItem.valid" matTooltip="Save this item in menu list">Add Item</button>
             </div>

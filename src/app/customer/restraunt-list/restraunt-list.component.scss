@@ -1,5 +1,5 @@
 .container-1 {
-  height: 88vh;
+  height: calc(100vh - 70px);
   width: 100vw;
 }
 .head {
@@ -15,7 +15,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 10px;
-    height: 73vh;
+    height:  calc(100vh - 166px);
     align-items: center;
     overflow: auto;
 }
